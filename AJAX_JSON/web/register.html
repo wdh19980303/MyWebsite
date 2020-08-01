@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script>
+    $(function () {
+        $("#username").blur(function () {
+            var username = $(this).val();
+            // 发送ajax请求
+            // 期望服务器的回复数据格式{"userExist":true,"msg":"此用户已存在"}
+            //                    {"userExist":false,"msg":"该用户可用"}
+
+            $.post("FindUserServlet",{username:username},function (data) {
+                alert(data)
+                // 判断userExist键是否存在
+                if(data.userExist) {
+                    // 用户名存在
+                    $("#username_msg").html(data.msg)
+                    $("#username_msg").css("color","red")
+                }else{
+                    // 用户名不存在
+                    $("#username_msg").html(data.msg)
+                    $("#username_msg").css("color","cyan")
+
+                }
+            },"json")
+        })
+
+    })
+</script>
+<body>
+<form action="" id="register">
+    <input type="text" id="username" name="username"><span id="username_msg"></span><br>
+    <input type="text" id="password" name="password"><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

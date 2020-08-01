@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+   /* var person = {
+        "name": "alice",
+        "age": 23,
+        "gender": true
+    }*/
+
+    // 获取person对象中的所有的键和值
+    // for in 循环
+   /* for (var key in person) {
+        // alert(key + " :" + person.key) 这种方式不行,
+        alert(key + ":" + person[key])
+    }*/
+
+    var Persons = {
+        "person": [
+            {
+                "name": "liya",
+                "age": 23,
+                "gender": true
+            },
+
+            {
+                "name": "purple",
+                "age": 218,
+                "gender": true
+            },
+
+            {
+                "name": "nana",
+                "age": 23,
+                "gender": true
+            },
+        ]
+    }
+    // 遍历
+    alert(Persons.person[0].name)
+
+    var ps = [
+        {
+            "name": "mark",
+            "age": 23,
+            "gender": true
+        },
+
+        {
+            "name": "purple",
+            "age": 218,
+            "gender": true
+        },
+
+        {
+            "name": "nana",
+            "age": 23,
+            "gender": true
+        },]
+    for (var i = 0; i < ps.length; i++) {
+        var p = ps[i]
+        for (var key in p) {
+            alert(key + ":" + p[key])
+        }
+    }
+
+</script>
+<body>
+
+</body>
+</html>

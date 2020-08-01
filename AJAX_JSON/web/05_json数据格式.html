@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    // 定义基本格式
+    var Person = {
+        "name": "alice",
+        "age": 23,
+        "gender": true
+    }
+
+    // 获取name
+    // var name = Person.name
+    // alert(name)
+
+    // alert(Person)
+    // 嵌套格式 {} -> []
+
+
+    var Persons = {
+        "person": [
+            {
+                "name": "liya",
+                "age": 23,
+                "gender": true
+            },
+
+            {
+                "name": "purple",
+                "age": 218,
+                "gender": true
+            },
+
+            {
+                "name": "nana",
+                "age": 23,
+                "gender": true
+            },
+        ]
+
+    }
+    // 获取数组的值 __
+    var name = Persons.person[0].name;
+    alert(name)
+
+
+
+
+    var ps = [
+        {
+            "name": "mark",
+            "age": 23,
+            "gender": true
+        },
+
+        {
+            "name": "purple",
+            "age": 218,
+            "gender": true
+        },
+
+        {
+            "name": "nana",
+            "age": 23,
+            "gender": true
+        },]
+
+    var psname = ps[2].name
+    alert(psname)
+
+</script>
+<body>
+
+</body>
+</html>

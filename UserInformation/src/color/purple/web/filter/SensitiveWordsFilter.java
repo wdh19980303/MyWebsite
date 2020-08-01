@@ -97,7 +97,7 @@ public class SensitiveWordsFilter implements Filter {
 
     }
 
-    private List<String> sensitiveWords = new ArrayList<>();
+    private final List<String> sensitiveWords = new ArrayList<>();
 
     public void init(FilterConfig config) throws ServletException {
 
