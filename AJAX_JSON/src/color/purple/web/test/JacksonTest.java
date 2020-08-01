@@ -1,5 +1,6 @@
 package color.purple.web.test;
 
+import color.purple.web.domain.GameInfo;
 import color.purple.web.domain.Person;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,10 +8,13 @@ import com.fasterxml.jackson.databind.util.ISO8601Utils;
 import jdk.jfr.StackTrace;
 import org.junit.Test;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 import java.util.*;
+import java.util.List;
 
 public class JacksonTest {
     // java对象转JSON字符串
@@ -181,5 +185,30 @@ public class JacksonTest {
         Person person = mapper.readValue(json, Person.class);
         System.out.println(person);
 
+    }
+
+    @Test
+    public void test6() throws JsonProcessingException {
+        GameInfo gameInfo = new GameInfo();
+        gameInfo.setStation("steam");
+        List<String> games = new ArrayList<>();
+        games.add("Dota 2");
+        games.add("CSgo");
+        games.add("HL2");
+        games.add("L4D2");
+
+        Map<String,String[]> game_credit = new HashMap<>();
+        String[] product = {
+                "gta","r"
+        };
+        game_credit.put("2k",product);
+        product = new String[]{
+            "r6","gw","ac"
+        };
+        game_credit.put("ubi",product);
+
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(gameInfo);
+        System.out.println(json);
     }
 }
